@@ -1,0 +1,55 @@
+Using ``matrix_divided``
+
+-----------------------
+
+Check if the matrix item are either ints or floats
+Check if the length of lists in a matrix are the same
+Check if div is a float or int or 0
+Divide all the items in matrix by div
+Return a new matrix
+
+First import ``matrix_divided``
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+Now use it:
+
+Basic usage:
+    >>> matrix = [[4, 5, 7], [8, 9, 10]]
+    >>> print(matrix_divided(matrix, 3))
+    [[1.33, 1.67, 2.0], [2.67, 3.0, 3.33]]
+
+Non int/float inputs in lists of matrix:
+    >>> matrix = [['b', 'e', 't'], ['a', 3, 5]]
+    >>> print(matrix_divided(matrix, 5))
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Zero "div" input:
+    >>> matrix = [[1, 2, 3], [4, 5, 6]]
+    >>> print(matrix_divided(matrix, 0))
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+Different list length in matrix input:
+    >>> matrix = [[1, 2, 3], [4, 5]]
+    >>> print(matrix_divided(matrix, 2))
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+Negative variables in list inputs:
+    >>> matrix = [[1, 2, -3], [4, 5, -6]]
+    >>> print(matrix_divided(matrix, 2))
+    [[0.5, 1.0, -1.5], [2.0, 2.5, -3.0]]
+
+Empty matrix input:
+    >>> matrix = [[]]
+    >>> print(matrix_divided(matrix, 2))
+    [[]]
+
+No input:
+    >>> print(matrix_divided())
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
