@@ -12,4 +12,4 @@ class LockedClass:
         if attribute == "first_name":
             self.__dict__[attribute] = value
         else:
-            raise AttributeError("'LckdClss'objct noattrbt'" + attribute + "'")
+            raise AttributeError("'LockedClass' object has no attribute" + attribute + "'")
